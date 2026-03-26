@@ -1,5 +1,3 @@
-/* Fonte e fundo */
-/* Fonte e fundo da página */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ffe4ec, #ffc1e3); /* rosa degradê */
@@ -10,7 +8,6 @@ body {
   margin: 0;
 }
 
-/* Cartão central */
 .card {
   background: white;
   padding: 30px 20px;
@@ -20,7 +17,6 @@ body {
   width: 320px;
 }
 
-/* Título */
 .card p:first-of-type {
   font-size: 28px;
   font-weight: bold;
@@ -28,7 +24,6 @@ body {
   margin-bottom: 25px;
 }
 
-/* Labels */
 .card label {
   display: block;
   margin-top: 10px;
@@ -39,7 +34,7 @@ body {
   margin-left: 10px;
 }
 
-/* Inputs de número */
+
 .card input[type="number"] {
   width: 90%;
   padding: 12px;
@@ -56,7 +51,7 @@ body {
   box-shadow: 0 0 8px rgba(255,77,166,0.5);
 }
 
-/* Botão */
+
 .card input[type="button"] {
   width: 95%;
   padding: 12px;
@@ -75,7 +70,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Resultados */
+
 .card span {
   display: block;
   margin-top: 15px;
