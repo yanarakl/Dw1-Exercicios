@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="imc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <p id="Titulo">IMC</p>
+        <br>
+        <label for="InputPeso" id="LabelPeso">Peso</label>
+        <input type="number" id="InputPeso">
+        <br> <br>
+        <label for="InputAltura" id="LabelAltura">Altura</label>
+        <input type="number" id="InputAltura">
+        <br><br>
+        <input type="button" id="botao" value="Calcular" onclick="Calcular()">
+        <br><br>
+        <p id="LabelResp">Resultado</p>
+        <span id="SpanResp"></span>
+    </div>
+
+    <script src="Imc.js"></script>
+</body>
+</html>
