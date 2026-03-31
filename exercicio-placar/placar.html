@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar Interativo</title>
+    <link rel="stylesheet" href="placar.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏆 Placar</h1>
+
+        <div class="scoreboard">
+
+            <!-- Time A -->
+            <div class="team">
+                <input type="text" id="nameA" value="Time A">
+                <div class="score" id="scoreA">0</div>
+
+                <div class="buttons">
+                    <button class="add" id="addA">+1</button>
+                    <button class="remove" id="removeA">-1</button>
+                </div>
+            </div>
+
+            <!-- Time B -->
+            <div class="team">
+                <input type="text" id="nameB" value="Time B">
+                <div class="score" id="scoreB">0</div>
+
+                <div class="buttons">
+                    <button class="add" id="addB">+1</button>
+                    <button class="remove" id="removeB">-1</button>
+                </div>
+            </div>
+
+        </div>
+
+        <button id="reset">🔄 Resetar</button>
+    </div>
+
+    <script src="Placar.js"></script>
+</body>
+</html>
