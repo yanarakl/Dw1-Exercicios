@@ -1,9 +1,31 @@
 function CalcularBruto(){
     debugger
-    let tempo = parseInt(document.getElementById("InputHoras").value);
+
+    let entrada = document.getElementById("InputHoraEntrada").value;
+    let saida = document.getElementById("InputHoraSaida").value;
+
+    if (!entrada || !saida) {
+        alert("Preencha entrada e saída!");
+        return;
+    }
+
+    let dataEntrada = new Date(entrada);
+    let dataSaida = new Date(saida);
+
+    if (dataSaida <= dataEntrada) {
+        alert("Saída deve ser depois da entrada!");
+        return;
+    }
+
+    let diferenca = dataSaida - dataEntrada;
+    let tempo = diferenca / (1000 * 60 * 60);
+
+    tempo = Math.ceil(tempo);
+
     let dias = parseInt(tempo/24);
     let horas = tempo - (dias*24);
     let tempoBruto = 0;
+
     if(dias==1 && horas==0){
         tempoBruto = 60;
     }else if(dias>=1){
@@ -13,11 +35,7 @@ function CalcularBruto(){
         tempoBruto = (tempoC * 2.5) + 5;
     }
 
-    
-        
-        
-    
-    document.getElementById("ValorBruto").innerHTML=tempoBruto;
+    document.getElementById("ValorBruto").innerHTML=tempoBruto.toFixed(2);
 
     return tempoBruto
 }
@@ -42,7 +60,6 @@ function CalcularTotal(){
     }else{
         ValorTotal= valorPorte;
     }
-    
 
     document.getElementById("ValorTotal").innerHTML=ValorTotal.toFixed(2);
 }
