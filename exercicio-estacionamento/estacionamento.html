@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estacionamento.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main><h1>Sistema de Tarifaçao de Estacionamento</h1>
+    <br>
+    <label for="InputHoras" id="LabelHoras">Hora de Entrada</label>
+    <input type="datetime-local" id="InputHoraEntrada">
+    <br>
+    <label for="InputHoras" id="LabelHoras">Hora de Saída</label>
+    <input type="datetime-local" id="InputHoraSaida">
+    <br>
+    <label for="InputVeiculo" id="LabelVeiculo">Veiculo Grande</label>
+    <input type="checkbox" id="InputVeiculo">
+    <br>
+    <label for="InputFrequencia" id="LabelFrequencia">Cliente Frequente</label>
+    <input type="checkbox" id="InputFrequencia">
+    <br>
+    <input type="button" value="Calcular Bruto" onclick="CalcularBruto()">
+    <br>
+    <span id="ValorBruto"></span>
+    <br>
+    <input type="button" value="Calcular Total" onclick="CalcularTotal()">
+    <br>
+    <span id="ValorTotal"></span>
+    </main>
+
+    <script src="estacionamento.js"></script>
+</body>
+</html>

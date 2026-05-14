@@ -1,0 +1,91 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo listrado */
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #ffffff 0px,
+        #ffffff 20px,
+        #c0392b 20px,
+        #c0392b 40px
+    );
+}
+
+/* Header */
+header {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+header h3 {
+    color: #c0392b;
+    text-align: center;
+    margin: 0;
+}
+
+/* Container */
+main {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Card */
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Linha tipo tabela */
+section label:nth-of-type(odd),
+section label:nth-of-type(even),
+section input {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Produto */
+section label:nth-of-type(odd) {
+    width: 55%;
+    margin-top: 10px;
+}
+
+/* Preço */
+section label:nth-of-type(even) {
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+    color: #c0392b;
+    margin-right: 10px;
+}
+
+/* Input */
+section input {
+    width: 50px;
+    margin-top: 10px;
+}
+
+/* Espaçamento entre itens */
+section br {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Total */
+section:last-child {
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
