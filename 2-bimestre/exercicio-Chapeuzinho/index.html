@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Estoque da Vovó</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>Estoque da Vovó</h1>
+    
+    <div class="container">
+        <h3>Estoque</h3>
+        <button onclick="ChecarEstoque()">Checar Estoque</button>
+        <div id="resultadoTodas" class="resultado">...</div>
+    </div>
+
+    <div class="container">
+        <div>
+            <label for="mensagemEnviada">Mensagem Enviada:</label>
+            <span id ="mensagemEnviada">  </span>
+        </div>
+        <div>
+            <label for="mensagemRecebida">Mensagem Recebida:</label>
+            <span id ="mensagemRecebida">  </span>
+        </div>
+    </div>
+
+    <script>
+        const enderecoServidor = 'localhost';
+        const porta = '3001';
+
+         async function ChecarEstoque() {
+            try {
+                const response = await fetch(`http://${enderecoServidor}:${porta}/checarestoque`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const data = await response.json();
+
+                document.getElementById('mensagemEnviada').textContent = JSON.stringify({ mensagem: 'situacaoEstoque' });
+                    document.getElementById('mensagemRecebida').textContent = JSON.stringify(data);
+                 if (data.sucesso && data.produtos.length > 0) {
+                let tabela = '<table>';
+
+                tabela += `
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Quantidade Mínima</th>
+                        <th>Quantidade Máxima</th>
+                        <th>Quantidade a Repor</th>
+                    </tr>
+                `;
+
+                data.produtos.forEach(produto => {
+                    tabela += `
+                        <tr>
+                            <td>${produto.nome_produto}</td>
+                            <td>${produto.quantidade_produto}</td>
+                            <td>${produto.quantidade_minima_produto}</td>
+                            <td>${produto.quantidade_maxima_produto}</td>
+                            <td>${produto.quantidade_repor}</td>
+                        </tr>
+                    `;
+                });
+
+                tabela += '</table>';
+
+                tabela += `<p><strong>Total de registros: ${data.quantidade}</strong></p>`;
+                
+
+                document.getElementById('resultadoTodas').innerHTML = `
+                    <div class="sucesso">
+                        ${tabela}
+                    </div>
+                `;
+                } else if (data.sucesso && data.produtos.length === 0) {
+                    document.getElementById('resultadoTodas').innerHTML = '<span>Nenhum produto cadastrado</span>';
+                } else {
+                    document.getElementById('resultadoTodas').innerHTML = `<span class="erro">${data.mensagem}</span>`;
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('resultadoTodas').innerHTML = '<span class="erro">Erro na comunicação com o servidor</span>';
+            }
+        }
+
+
+       
+    </script>
+</body>
+
+</html>
