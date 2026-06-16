@@ -2,10 +2,19 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+<<<<<<< HEAD
     "nodemon": "^3.1.14",
+=======
+>>>>>>> ed6a475 (exercicio)
     "pg": "^8.21.0"
   },
   "scripts": {
     "dev": "nodemon server.js"
+<<<<<<< HEAD
+=======
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+>>>>>>> ed6a475 (exercicio)
   }
 }

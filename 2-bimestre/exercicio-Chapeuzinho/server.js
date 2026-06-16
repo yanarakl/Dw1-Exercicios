@@ -18,7 +18,11 @@ const pool = new Pool({
 // Middleware para parsear JSON
 app.use(express.json());
 
+<<<<<<< HEAD
 // Middleware CORS para permitir qualquer origem
+=======
+// Middleware CORS para permitir qualquer orige
+>>>>>>> ed6a475 (exercicio)
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST');
@@ -29,7 +33,11 @@ app.use((req, res, next) => {
 // Rota para listar todas as pessoas
 app.get('/checarestoque', async (req, res) => {
   try {
+<<<<<<< HEAD
     const query = 'SELECT id_produto, nome_produto, quantidade_produto, quantidade_minima_produto, quantidade_maxima_produto FROM produto ORDER BY id_produto';
+=======
+    const query = 'SELECT * FROM public.produto ORDER BY id_produto';
+>>>>>>> ed6a475 (exercicio)
     const result = await pool.query(query);
 
     const produtos = result.rows.map(produto => {
